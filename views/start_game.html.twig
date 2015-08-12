@@ -2,29 +2,75 @@
     <head>
         <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
         <title>Rochambeau</title>
+        <script>
+        var player1 = "";
+        var player2 = "";
+        var url = "";
+
+            document.onkeydown = function(keyboard)
+            {
+                switch (keyboard.keyCode)
+                {
+                    case 65:
+                        player1 = "Rock";
+                        break;
+
+                    case 83:
+                        player1 = "Paper";
+                        break;
+
+                    case 68:
+                        player1 = "Scissors";
+                        break;
+
+                    case 74:
+                        player2 = "Rock";
+                        break;
+
+                    case 75:
+                        player2 = "Paper";
+                        break;
+
+                    case 76:
+                        player2 = "Scissors";
+                        break;
+
+                    case 32:
+                        window.location = url;
+                };
+
+                url = '/shoot?player1=' + player1 + '&player2=' + player2;
+            };
+
+        </script>
     </head>
     <body>
-        <div class="container">
-            <form action='/shoot' method="get">
-                <div class='form-group'>
-                    <label for='player1'>Player 1 Weapon</label>
-                    <select name="player1">
-                        <option value="Rock">Rock</option>
-                        <option value="Paper">Paper</option>
-                        <option value="Scissors">Scissors</option>
-                    </select>
+        <div class="container text-center">
+            <h1>Two Player Game</h1>
+            <hr>
+            <p class="lead">
+                Players, choose your action!
+            </p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Player 1</h2>
+                    <p>
+                        a = Rock | s = Paper | d = Scissors
+                    </p>
                 </div>
-
-                <div class='form-group'>
-                    <label for="player2">Player 2 Weapon</label>
-                    <select name="player2">
-                        <option value="Rock">Rock</option>
-                        <option value="Paper">Paper</option>
-                        <option value="Scissors">Scissors</option>
-                    </select>
+                <div class="col-sm-6">
+                    <h2>Player 2</h2>
+                    <p>
+                        j = Rock | k = Paper | l = Scissors
+                    </p>
                 </div>
-                <input type="submit">
-            </form>
+            </div>
+            <br>
+            <br>
+            <div >
+                <h4>Hit space to play!</h4>
+                <p>I'd rather <a href="/play_computer">play the computer</a>.</p>
+            </div>
         </div>
     </body>
 </html>
