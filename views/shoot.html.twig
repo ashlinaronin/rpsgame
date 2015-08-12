@@ -5,16 +5,13 @@
     </head>
     <body>
         <div class="container">
-
             {% if winner == "Draw" %}
                 <h1>It's a Draw!!!!!!!!</h1>
             {% else %}
                 <h1>The winner is............. {{ winner }}</h1>
             {% endif %}
-
+            <h2> Player 1 chose {{ player1 }} and Player 2 chose {{ player2 }}</h2>
             <a href="/">I know you want to play again.</a>
-
         </div>
-
     </body>
 </html>
