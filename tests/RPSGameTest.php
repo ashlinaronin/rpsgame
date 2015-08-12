@@ -36,6 +36,18 @@
 
             $this->assertEquals("Player 1", $result);
         }
+
+        function test_chooseWinner_rockScissors()
+        {
+            $test_RPSGame = new RPSGame;
+            $player1 = "Rock";
+            $player2 = "Scissors";
+
+            $result = $test_RPSGame->chooseWinner($player1, $player2);
+
+            $this->assertEquals("Player 1", $result);
+        }
+
     }
 
  ?>
