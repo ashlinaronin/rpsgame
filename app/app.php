@@ -22,6 +22,21 @@
         return $app['twig']->render('shoot.html.twig', array('winner' => $winner));
     });
 
+    // Play computer form
+    $app->get("/play_computer", function() use ($app) {
+        return $app['twig']->render('play_computer.html.twig');
+    });
+
+    // Play computer results
+    $app->get("/shoot_computer", function() use($app)
+    {
+        $my_RPSGame = new RPSGame;
+        $options = array("Rock", "Paper", "Scissors");
+        $computer = $options[rand(0,2)];
+        $winner = $my_RPSGame->chooseWinner($_GET['Player1'], $computer);
+        return $app['twig']->render('shoot_computer.html.twig', array('winner' => $winner));
+    });
+
     return $app;
 
 ?>

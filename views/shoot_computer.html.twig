@@ -8,11 +8,14 @@
 
             {% if winner == "Draw" %}
                 <h1>It's a Draw!!!!!!!!</h1>
+            {% elseif winner == "Player 2" %}
+                <h1>Sorry, the computer won.</h1>
             {% else %}
-                <h1>The winner is............. {{ winner }}</h1>
+                <h1>Whoo you won!</h1>
             {% endif %}
 
-            <a href="/">I know you want to play again.</a>
+            <a href="/play_computer">Play computer again.</a>
+            <a href="/">Try a two player game.</a>
 
         </div>
 
