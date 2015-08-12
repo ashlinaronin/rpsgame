@@ -11,7 +11,11 @@
                 {
                     return "Player 2";
                 }
-                
+                elseif ($player1 == "Scissors" && $player2 == "Paper")
+                {
+                    return "Player 1";
+                }
+
             }
         }
 
