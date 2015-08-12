@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+        <title>Rock-Paper-Scissors Winner</title>
+    </head>
+    <body>
+        <div class="container">
+
+            {% if winner == "Draw" %}
+                <h1>It's a Draw!!!!!!!!</h1>
+            {% else %}
+                <h1>The winner is............. {{ winner }}</h1>
+            {% endif %}
+
+        </div>
+
+    </body>
+</html>

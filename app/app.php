@@ -15,6 +15,12 @@
     });
 
     // Results route
+    $app->get("/shoot", function() use($app)
+    {
+        $my_RPSGame = new RPSGame;
+        $winner = $my_RPSGame->chooseWinner($_GET['Player1'], $_GET['Player2']);
+        return $app['twig']->render('shoot.html.twig', array('winner' => $winner));
+    });
 
     return $app;
 
