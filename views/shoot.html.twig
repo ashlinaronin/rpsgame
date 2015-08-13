@@ -12,21 +12,92 @@
                     case 32:
                         window.location = '/';
                 };
-
-                //url = '/';
             };
 
         </script>
     </head>
     <body>
-        <div class="container">
+        <div class="container text-center">
             {% if winner == "Draw" %}
-                <h1>It's a Draw!!!!!!!!</h1>
+                <h1>Draw!</h1>
             {% else %}
-                <h1>The winner is............. {{ winner }}</h1>
+                <h1>{{ winner }} Wins!</h1>
             {% endif %}
-            <h2> Player 1 chose {{ player1 }} and Player 2 chose {{ player2 }}</h2>
-            <a href="/">I know you want to play again.</a>
+            <hr>
+            <div class="row">
+                <div class="col-sm-5">
+                    <h2>Player 1 Chose</h2>
+                    {% if player1 == "Rock"%}
+                    <pre style="margin-left:3em; margin-right:3em;">
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+                    </pre>
+                    {% elseif player1 == "Paper" %}
+                    <pre style="margin-left:3em; margin-right:3em;">
+_______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+                    </pre>
+                    {% elseif player1 == "Scissors" %}
+                    <pre style="margin-left:3em; margin-right:3em;">
+___
+---'  ____)_______
+            _______)
+           __________)
+      (____)
+---.__(___)
+                    </pre>
+                    {%endif%}
+                </div>
+                <div class="col-sm-2" style="padding-top: 6em;">
+                    <h1>VS</h1>
+                </div>
+                <div class="col-sm-5">
+                    <h2>Player 2</h2>
+                    {% if player2 == "Rock"%}
+                    <pre style="margin-left:3em; margin-right:3em;">
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+                    </pre>
+                    {% elseif player2 == "Paper" %}
+                    <pre  style="margin-left:3em; margin-right:3em;">
+_______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+                    </pre >
+                    {% elseif player2 == "Scissors" %}
+                    <pre style="margin-left:3em; margin-right:3em;">
+___
+---'  ____)_______
+            _______)
+           __________)
+      (____)
+---.__(___)
+                    </pre>
+                    {%endif%}
+                </div>
+            </div>
+            <br>
+            <br>
+            <div >
+                <h4>Hit space to play again!</h4>
+                <p>I'd rather <a href="/play_computer">play the computer</a>.</p>
+            </div>
         </div>
+
     </body>
 </html>

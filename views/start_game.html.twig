@@ -34,12 +34,12 @@
                     case 76:
                         player2 = "Scissors";
                         break;
-
-                    case 32:
-                        window.location = url;
                 };
 
                 url = '/shoot?player1=' + player1 + '&player2=' + player2;
+                if (player1 != "" && player2 !="") {
+                    window.location = url;
+                }
             };
 
         </script>
@@ -68,7 +68,6 @@
             <br>
             <br>
             <div >
-                <h4>Hit space to play!</h4>
                 <p>I'd rather <a href="/play_computer">play the computer</a>.</p>
             </div>
         </div>

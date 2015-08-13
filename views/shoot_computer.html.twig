@@ -2,20 +2,104 @@
     <head>
         <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
         <title>Rock-Paper-Scissors Winner</title>
+        <script>
+        var url = "";
+
+            document.onkeydown = function(keyboard)
+            {
+                switch (keyboard.keyCode)
+                {
+                    case 32:
+                        window.location = '/play_computer';
+                };
+            };
+
+        </script>
     </head>
     <body>
-        <div class="container">
+        <div class="container text-center">
             {% if winner == "Draw" %}
-                <h1>It's a Draw!!!!!!!!</h1>
+                <h1>Draw!</h1>
             {% elseif winner == "Player 2" %}
-                <h1>Sorry, the computer won.</h1>
+                <h1>Computer Wins!</h1>
             {% else %}
-                <h1>Whoo you won!</h1>
+                <h1>You Win!</h1>
             {% endif %}
-            <h2> You chose {{ player1 }} and the computer chose {{ player2 }}</h2>
-
-            <a href="/play_computer">Play computer again.</a>
-            <a href="/">Try a two player game.</a>
+            <hr>
+            <div class="row">
+                <div class="col-sm-5">
+                    <h2>You Chose</h2>
+                    {% if player1 == "Rock"%}
+                    <pre style="margin-left:3em; margin-right:3em;">
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+                    </pre>
+                    {% elseif player1 == "Paper" %}
+                    <pre style="margin-left:3em; margin-right:3em;">
+_______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+                    </pre>
+                    {% elseif player1 == "Scissors" %}
+                    <pre style="margin-left:3em; margin-right:3em;">
+___
+---'  ____)_______
+            _______)
+           __________)
+      (____)
+---.__(___)
+                    </pre>
+                    {%endif%}
+                </div>
+                <div class="col-sm-2" style="padding-top: 6em;">
+                    <h1>VS</h1>
+                </div>
+                <div class="col-sm-5">
+                    <h2>Computer Chose</h2>
+                    {% if player2 == "Rock"%}
+                    <pre style="margin-left:3em; margin-right:3em;">
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+                    </pre >
+                    {% elseif player2 == "Paper" %}
+                    <pre style="margin-left:3em; margin-right:3em;">
+_______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+                    </pre >
+                    {% elseif player2 == "Scissors" %}
+                    <pre style="margin-left:3em; margin-right:3em;">
+___
+---'  ____)_______
+            _______)
+           __________)
+      (____)
+---.__(___)
+                    </pre>
+                    {%endif%}
+                </div>
+            </div>
+            <br>
+            <br>
+            <div >
+                <h4>Hit space to play again!</h4>
+                <p>I'd rather <a href="/">play a friend</a>.</p>
+            </div>
         </div>
+
     </body>
 </html>

@@ -1,23 +1,55 @@
 <html>
     <head>
         <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
-        <title>Rochambeau against the computer</title>
+        <title>Rochambeau</title>
+        <script>
+        var player1 = "";
+        var url = "";
+
+            document.onkeydown = function(keyboard)
+            {
+                switch (keyboard.keyCode)
+                {
+                    case 65:
+                        player1 = "Rock";
+                        break;
+
+                    case 83:
+                        player1 = "Paper";
+                        break;
+
+                    case 68:
+                        player1 = "Scissors";
+                        break;
+
+                };
+
+                url = '/shoot_computer?player1=' + player1;
+                if (player1 != "") {
+                    window.location = url;
+                }
+            };
+
+        </script>
     </head>
     <body>
-        <div class="container">
-            <h1>So you think you are a match for me.</h1>
-            <form action='/shoot_computer' method="get">
-                <div class='form-group'>
-                    <label for='player1'>Choose your Weapon</label>
-                    <select name="player1">
-                        <option accesskey="r" value="Rock">Rock</option>
-                        <option value="Paper">Paper</option>
-                        <option value="Scissors">Scissors</option>
-                    </select>
+        <div class="container text-center">
+            <h1>Play The Computer</h1>
+            <hr>
+            <p class="lead">
+                Choose your action!
+            </p>
+                <div >
+                    <h2>Player 1</h2>
+                    <p>
+                        a = Rock | s = Paper | d = Scissors
+                    </p>
                 </div>
-
-                <input type="submit">
-            </form>
+            <br>
+            <br>
+            <div >
+                <p>I want to <a href="/">play a friend</a>.</p>
+            </div>
         </div>
     </body>
 </html>
